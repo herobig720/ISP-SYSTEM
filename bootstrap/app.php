@@ -1,5 +1,6 @@
 <?php
 
+use App\Console\Kernel as ConsoleKernel;
 use App\Http\Middleware\HandleAppearance;
 use App\Http\Middleware\HandleInertiaRequests;
 use Illuminate\Foundation\Application;
@@ -24,4 +25,6 @@ return Application::configure(basePath: dirname(__DIR__))
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
-    })->create();
+    })
+    // ✅ Register Kernel here
+    ->create();
